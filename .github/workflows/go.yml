@@ -45,7 +45,7 @@ jobs:
         password: ${{secrets.DOCKER_PASSWORD}}
         
     - name: Docker build and push
-      uses: cloudposse/github-action-docker-build-push@1.15.0
+      uses: docker/build-push-action@v2
       with:
         push: true
         tags: amir3170/go:latest
