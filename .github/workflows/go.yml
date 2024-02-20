@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
+  
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
@@ -35,7 +35,7 @@ jobs:
       with:
         path: ./...
    
-   docker:
+  docker:
     runs-on:  ubuntu-latest
     steps:
     - name: Docker Login
@@ -48,6 +48,6 @@ jobs:
     - name: Docker build and push
       uses: cloudposse/github-action-docker-build-push@1.15.0
       with:
-      push: true
+        push: true
         tags: amir3170/go:latest
 
