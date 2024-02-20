@@ -26,3 +26,9 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: go vet
+      run: go vet main.go
+    - name: golint
+      run: golint main.go
+ 
