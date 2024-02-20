@@ -27,8 +27,12 @@ jobs:
     - name: Test
       run: go test -v ./...
 
-    - name: go vet
-      run: go vet main.go
-    - name: golint
-      run: golint main.go
+    - name: Vet
+      run: go vet ./...
+      
+    - name: golintr
+      uses: norwd/golintr@v2.1.0
+      with:
+        path: ./...
+   
  
