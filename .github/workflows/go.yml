@@ -27,7 +27,15 @@ jobs:
     - name: Test
       run: go test -v ./...
 
-  docker:
+    - name: Vet
+      run: go vet ./...
+      
+    - name: golintr
+      uses: norwd/golintr@v2.1.0
+      with:
+        path: ./...
+   
+   docker:
     runs-on:  ubuntu-latest
     steps:
     - name: Docker Login
@@ -40,4 +48,4 @@ jobs:
     - name: Docker build and push
       uses: cloudposse/github-action-docker-build-push@1.15.0
       with:
-        
+
